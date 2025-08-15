@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body style="font-family: Arial; margin: 30px;">
+
+  <h2 style="color: darkblue;">User Registration</h2>
+
+  <form action="http://localhost:3000/submit" method="POST" onsubmit="return validateForm()" style="border: 1px solid #ccc; padding: 20px; width: 300px;">
+    <label>Name:</label><br>
+    <input type="text" name="name" id="name" style="margin-bottom: 10px; width: 100%;"><br>
+
+    <label>Email:</label><br>
+    <input type="text" name="email" id="email" style="margin-bottom: 10px; width: 100%;"><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" id="password" style="margin-bottom: 10px; width: 100%;"><br>
+
+    <input type="submit" value="Register" style="background: darkblue; color: white; padding: 8px 15px; border: none; cursor: pointer;">
+  </form>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!name || !email || !password) {
+        alert("All fields are required!");
+        return false;
+      }
+
+      if (!email.includes('@')) {
+        alert("Invalid email format");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>
