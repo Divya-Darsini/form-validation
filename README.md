@@ -9,9 +9,13 @@ The app validates form inputs on both the **client-side** and **server-side** to
 
 validation-app/
 │── index.html # Main HTML form
+
 │── server.js # Node.js server
+
 │── package.json # Project dependencies & scripts
+
 │── package-lock.json # Lock file for dependencies
+
 │── .gitignore # Ignored files/folders
 
 
